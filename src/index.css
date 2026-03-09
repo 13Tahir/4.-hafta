@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#030014] text-gray-100 min-h-screen font-sans;
+    overflow-x: hidden;
+  }
+}
+
+.glass {
+  background: rgba(26, 11, 46, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.glass-card {
+  @apply glass rounded-2xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  transform: translateY(-5px);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Custom background animation */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(1px 1px at 25% 10%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 50% 25%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 75% 40%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 15% 60%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 40% 75%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 85% 90%, #fff 50%, transparent);
+  background-size: 550px 550px;
+  animation: bg-scroll 60s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes bg-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 550px 550px; }
+}
